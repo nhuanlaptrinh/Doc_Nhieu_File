@@ -1,12 +1,12 @@
 {
-  "name": "02. WF_CSKH_0611",
+  "name": "01. GGD_Test",
   "nodes": [
     {
       "parameters": {
         "model": "gpt-4.1-mini",
         "options": {}
       },
-      "id": "7a14fcc9-d632-4ab5-8308-05a3cf695882",
+      "id": "ca735608-8973-47c3-a5c1-6aaa1c5413ed",
       "name": "OpenAI Chat Model",
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1,
@@ -16,8 +16,8 @@
       ],
       "credentials": {
         "openAiApi": {
-          "id": "BpciZCOgdpJ79QO1",
-          "name": "OpenAi account 23062025"
+          "id": "Ed8Jh9kqfVkHaB9Y",
+          "name": "OpenAi account 25_API"
         }
       }
     },
@@ -40,7 +40,7 @@
           }
         }
       },
-      "id": "f8902c65-b407-4437-8d25-64a5f14671ce",
+      "id": "1c4ac04e-e12a-4363-b892-6fa867d0fedf",
       "name": "Default Data Loader",
       "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
       "typeVersion": 1,
@@ -54,7 +54,7 @@
         "model": "text-embedding-3-small",
         "options": {}
       },
-      "id": "614bf6bd-86de-4839-8c50-db565f48ceee",
+      "id": "f217421f-a40c-467b-8ec9-ea661dfbfe36",
       "name": "Embeddings OpenAI1",
       "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
       "typeVersion": 1,
@@ -64,8 +64,8 @@
       ],
       "credentials": {
         "openAiApi": {
-          "id": "BpciZCOgdpJ79QO1",
-          "name": "OpenAi account 23062025"
+          "id": "Ed8Jh9kqfVkHaB9Y",
+          "name": "OpenAi account 25_API"
         }
       }
     },
@@ -76,7 +76,7 @@
         "width": 583,
         "color": 4
       },
-      "id": "ce280942-60a7-4d9b-b9be-1ce1b0a65d53",
+      "id": "21b8711a-1a41-4404-afe9-14d8911c7266",
       "name": "Sticky Note",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -92,7 +92,7 @@
         "width": 573,
         "color": 5
       },
-      "id": "aceb2b35-dbbe-465d-8566-7678e2963ced",
+      "id": "e643631b-3665-4f78-aaa5-6684c1ba8eb0",
       "name": "Sticky Note1",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -103,7 +103,6 @@
     },
     {
       "parameters": {
-        "authentication": "serviceAccount",
         "operation": "download",
         "fileId": {
           "__rl": true,
@@ -118,7 +117,7 @@
           }
         }
       },
-      "id": "a6d1e8db-c3f7-49e0-acf1-f70cd79d1519",
+      "id": "20abdbdb-de51-4a14-b329-047252d9053a",
       "name": "Download File",
       "type": "n8n-nodes-base.googleDrive",
       "typeVersion": 3,
@@ -128,9 +127,9 @@
       ],
       "executeOnce": true,
       "credentials": {
-        "googleApi": {
-          "id": "UFYSZcd8CgntABwS",
-          "name": "GSA_N"
+        "googleDriveOAuth2Api": {
+          "id": "rxFyTs7otauqN2lC",
+          "name": "Google Drive account 9"
         }
       }
     },
@@ -147,15 +146,15 @@
         "triggerOn": "specificFolder",
         "folderToWatch": {
           "__rl": true,
-          "value": "1JOXq1vwslcTjVGi4dAHb2hMuP0S5vNrF",
+          "value": "12PSlCPB3dyzN1mUws0fhYiuGSoLd8Lnf",
           "mode": "list",
-          "cachedResultName": "04. ChamSocKhanhHang",
-          "cachedResultUrl": "https://drive.google.com/drive/folders/1JOXq1vwslcTjVGi4dAHb2hMuP0S5vNrF"
+          "cachedResultName": "01. GGDrive_Doc",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/12PSlCPB3dyzN1mUws0fhYiuGSoLd8Lnf"
         },
         "event": "fileCreated",
         "options": {}
       },
-      "id": "4ccbfe42-ebdb-4fab-b9df-4016dab69264",
+      "id": "8b060a3b-97b3-4bfa-a3e7-4714b6e54536",
       "name": "File Created",
       "type": "n8n-nodes-base.googleDriveTrigger",
       "typeVersion": 1,
@@ -183,15 +182,15 @@
         "triggerOn": "specificFolder",
         "folderToWatch": {
           "__rl": true,
-          "value": "1JOXq1vwslcTjVGi4dAHb2hMuP0S5vNrF",
+          "value": "12PSlCPB3dyzN1mUws0fhYiuGSoLd8Lnf",
           "mode": "list",
-          "cachedResultName": "04. ChamSocKhanhHang",
-          "cachedResultUrl": "https://drive.google.com/drive/folders/1JOXq1vwslcTjVGi4dAHb2hMuP0S5vNrF"
+          "cachedResultName": "01. GGDrive_Doc",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/12PSlCPB3dyzN1mUws0fhYiuGSoLd8Lnf"
         },
         "event": "fileUpdated",
         "options": {}
       },
-      "id": "38d99495-d624-43a0-a26c-be7fb21ba9f0",
+      "id": "9c8ea095-60ec-4d69-be15-ba3030f17bb2",
       "name": "File Updated",
       "type": "n8n-nodes-base.googleDriveTrigger",
       "typeVersion": 1,
@@ -211,7 +210,7 @@
         "sessionIdType": "customKey",
         "sessionKey": "={{ $('Edit Fields').item.json.sessionId }}"
       },
-      "id": "27b5bfc3-c461-4ba0-982f-7a9ae84fa579",
+      "id": "750c51af-23d2-4eef-a0f1-7b7c1685293e",
       "name": "Postgres Chat Memory",
       "type": "@n8n/n8n-nodes-langchain.memoryPostgresChat",
       "typeVersion": 1,
@@ -222,19 +221,19 @@
       "notesInFlow": false,
       "credentials": {
         "postgres": {
-          "id": "vEJzSvEtz2wK5mnU",
-          "name": "Postgres account 18_CSKH"
+          "id": "ENQfbD0WGxPXU0N5",
+          "name": "nhuannguyen_postgres"
         }
       }
     },
     {
       "parameters": {
         "operation": "delete",
-        "tableId": "documents",
+        "tableId": "documents1",
         "filterType": "string",
         "filterString": "=metadata->>file_id=like.*{{ $json.file_id }}*"
       },
-      "id": "d041fe0a-348e-4d41-9ea7-2fdfec8aba86",
+      "id": "c0bd5f6c-219c-499e-9dba-6587b328a015",
       "name": "Delete Old Doc Rows",
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
@@ -245,8 +244,8 @@
       "alwaysOutputData": true,
       "credentials": {
         "supabaseApi": {
-          "id": "5Y1Oqex0loIlvr2b",
-          "name": "Supabase account_CSKH"
+          "id": "VWELejOYG6sdc09V",
+          "name": "Nhuannguyen_supabase"
         }
       }
     },
@@ -277,12 +276,18 @@
               "name": "file_url",
               "value": "={{ $json.webViewLink }}",
               "type": "string"
+            },
+            {
+              "id": "b8735aa6-4e47-4197-9f36-6559fa4d4420",
+              "name": "id",
+              "value": "={{ $json.id }}",
+              "type": "string"
             }
           ]
         },
         "options": {}
       },
-      "id": "e0b7371f-4cff-4a87-8233-5f2bbcae8c3e",
+      "id": "b6cc9235-de44-4a00-82b4-4b81c9989d21",
       "name": "Set File ID",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -297,7 +302,7 @@
         "height": 464.8027193303974,
         "width": 1035.6381264595484
       },
-      "id": "5fd958d9-1c56-4063-b3d3-19b48ac03ab0",
+      "id": "600478b7-eaf7-499e-aebf-c2af26da528b",
       "name": "Sticky Note2",
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
@@ -310,7 +315,7 @@
       "parameters": {
         "options": {}
       },
-      "id": "b5bbaedf-973a-4853-a50f-5c81e53f3afe",
+      "id": "9ff8db27-731f-41b8-adac-ce3d52b124fd",
       "name": "Respond to Webhook",
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.1,
@@ -339,7 +344,7 @@
         },
         "options": {}
       },
-      "id": "6dc7167f-512f-46fd-97bc-20ebace37b07",
+      "id": "c42969de-daff-45dc-b4b4-0ec85aacb0c0",
       "name": "Edit Fields",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
@@ -353,7 +358,7 @@
         "public": true,
         "options": {}
       },
-      "id": "2bace261-1fa0-402d-b4ec-fa2f25f700e3",
+      "id": "c7add1a0-f4b6-4d58-95ac-4d9ec225dabd",
       "name": "When chat message received",
       "type": "@n8n/n8n-nodes-langchain.chatTrigger",
       "typeVersion": 1.1,
@@ -361,17 +366,17 @@
         760,
         80
       ],
-      "webhookId": "b075f751-8555-407e-bc60-d6879bd1154c"
+      "webhookId": "ff060840-8aee-4d20-a123-c03d437ed3f2"
     },
     {
       "parameters": {
         "httpMethod": "POST",
-        "path": "12",
+        "path": "5e7bc971-122a-4d85-9bbd-34b5cf75104d",
         "authentication": "headerAuth",
         "responseMode": "responseNode",
         "options": {}
       },
-      "id": "3a1db515-1d09-445f-8fb8-fbc97e50b8d2",
+      "id": "97ae70a3-954d-403f-a0de-41ab34ea9b66",
       "name": "Webhook",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
@@ -379,7 +384,7 @@
         760,
         260
       ],
-      "webhookId": "a8511dcc-1b5e-4b56-becb-73d3605dbf98",
+      "webhookId": "5e7bc971-122a-4d85-9bbd-34b5cf75104d",
       "credentials": {
         "httpHeaderAuth": {
           "id": "1Uia0CdgVhPiuIJL",
@@ -392,7 +397,7 @@
         "operation": "pdf",
         "options": {}
       },
-      "id": "8229529f-2093-4e09-bd92-0b7361c73447",
+      "id": "ac4a70a5-7fbb-4147-8458-e4bfea3373bd",
       "name": "Extract PDF Text",
       "type": "n8n-nodes-base.extractFromFile",
       "typeVersion": 1,
@@ -406,7 +411,7 @@
         "aggregate": "aggregateAllItemData",
         "options": {}
       },
-      "id": "0371e550-0e34-4aa8-92af-11a7a14ce33b",
+      "id": "7ec565cb-3bc3-4682-b545-b6bcffc30d21",
       "name": "Aggregate",
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
@@ -419,7 +424,7 @@
       "parameters": {
         "chunkOverlap": 100
       },
-      "id": "749f5917-dfdf-4f8c-aba4-2d8f386d2710",
+      "id": "49f01dee-351c-4ca4-8af5-5bf1b5758a58",
       "name": "Character Text Splitter",
       "type": "@n8n/n8n-nodes-langchain.textSplitterCharacterTextSplitter",
       "typeVersion": 1,
@@ -440,7 +445,7 @@
         },
         "options": {}
       },
-      "id": "7d7d759e-355d-4e8a-85c0-d839dc177dbc",
+      "id": "20e5c28d-5aab-4802-9c24-e77f88e03663",
       "name": "Summarize",
       "type": "n8n-nodes-base.summarize",
       "typeVersion": 1,
@@ -454,10 +459,10 @@
         "promptType": "define",
         "text": "={{ $json.chatInput }}",
         "options": {
-          "systemMessage": "=# Prompt cho AI Agent N8n - Trợ lý Tài liệu Thông minh\n\n## Vai trò và Chức năng\nBạn là một trợ lý AI chuyên nghiệp, giúp tìm kiếm và truy xuất thông tin từ kho tài liệu đa định dạng. Nhiệm vụ chính của bạn là:\n\n- Tìm kiếm thông tin chính xác từ các tài liệu văn bản (TXT, DOC, PDF)\n- Truy xuất dữ liệu từ các file bảng tính (CSV, Excel)\n- Xử lý và cung cấp link truy cập video khi được yêu cầu\n- Đảm bảo tính chính xác và đầy đủ của thông tin được cung cấp\n\n## QUY TẮC CHÍNH XÁC - QUAN TRỌNG NHẤT\n\n### 🔍 NGUYÊN TẮC ĐỌC TÀI LIỆU CHÍNH XÁC\n1. **ĐỌC KỸ TOÀN BỘ NỘI DUNG**: Không được đoán hoặc suy luận từ từ khóa\n2. **TRÍCH XUẤT CHÍNH XÁC**: Copy nguyên văn thông tin từ tài liệu, không được thay đổi\n3. **KIỂM TRA LẠI**: Đọc lại nội dung trước khi trả lời để đảm bảo chính xác 100%\n4. **KHÔNG SỬ DỤNG KIẾN THỨC CŨ**: Chỉ dựa vào nội dung tài liệu được tìm thấy\n5. **XÁC NHẬN NGUỒN**: Luôn ghi rõ thông tin lấy từ tài liệu nào\n\n### 🎯 QUY TRÌNH KIỂM TRA CHÍNH XÁC\n**BƯỚC 1**: Tìm kiếm tài liệu liên quan với từ khóa chính xác\n**BƯỚC 2**: Định vị chính xác sản phẩm/thông tin cần tìm trong tài liệu\n**BƯỚC 3**: Đọc kỹ TOÀN BỘ đoạn văn/câu chứa thông tin đó\n**BƯỚC 4**: Trích xuất NGUYÊN VĂN thông tin cần thiết (số liệu, thời gian, tên sản phẩm)\n**BƯỚC 5**: Kiểm tra lại một lần nữa: đối chiếu câu hỏi với thông tin tìm được\n**BƯỚC 6**: Ghi rõ nguồn tài liệu và vị trí thông tin\n\n**ĐẶC BIỆT CHO CÂU HỎI BẢO HÀNH**:\n- Bước 2.1: Tìm chính xác tên sản phẩm (ví dụ: \"ổ cảm điện quang\")\n- Bước 2.2: Tìm từ khóa \"bảo hành\" liên quan đến sản phẩm đó\n- Bước 2.3: Đọc nguyên câu chứa cả tên sản phẩm và thời hạn bảo hành\n- Bước 2.4: Không được lấy thông tin bảo hành của sản phẩm khác\n\n### ⚠️ CẢNH BÁO LỖI THƯỜNG GẶP\n- **KHÔNG ĐƯỢC** đọc lướt hoặc đọc sơ sài\n- **KHÔNG ĐƯỢC** thay thế số liệu (ví dụ: 12 tháng thành 6 tháng)\n- **KHÔNG ĐƯỢC** sử dụng thông tin từ tài liệu khác khi trả lời\n- **KHÔNG ĐƯỢC** kết hợp thông tin từ nhiều nguồn mà không ghi rõ\n- **KHÔNG ĐƯỢC** suy đoán thông tin không có trong tài liệu\n\n## Quy trình Xử lý Yêu cầu\n\n### Bước 1: Phân tích Yêu cầu và Kiểm tra Tiêu đề\n- Đọc kỹ câu hỏi của người dùng\n- **LUÔN KIỂM TRA TIÊU ĐỀ TÀI LIỆU TRƯỚC**: Quét qua tất cả tiêu đề để tìm tài liệu liên quan\n- Ưu tiên tìm file .mp4 có tiêu đề khớp với yêu cầu (ví dụ: \"hướng dẫn lặp quạt 3 cánh\" → tìm tiêu đề chứa \"quạt 3 cánh\", \"lặp quạt\", \"hướng dẫn lắp quạt\")\n- Nếu câu hỏi không rõ ràng, yêu cầu làm rõ thêm\n\n### Bước 2: Truy vấn Supabase Vector Store\n- **BẮT BUỘC**: Luôn thực hiện tìm kiếm trong Supabase Vector Store\n- Sử dụng từ khóa liên quan để tìm kiếm toàn diện\n- Kiểm tra tất cả kết quả trả về, bao gồm cả metadata của video\n\n### Bước 3: Kiểm tra và Xác thực Dữ liệu - **CẢI TIẾN**\n- **ĐỌC KỸ TOÀN BỘ**: Đọc từng câu, từng đoạn văn có chứa thông tin cần thiết\n- **TRÍCH XUẤT NGUYÊN VĂN**: Copy chính xác thông tin từ tài liệu\n- **KIỂM TRA SỐ LIỆU**: Đặc biệt chú ý đến các con số, thời gian, số lượng\n- **XÁC NHẬN NGÀY THÁNG**: Kiểm tra kỹ các thông tin về thời hạn, bảo hành\n- **ĐỌC LẠI MỘT LẦN NỮA**: Đảm bảo không có sai sót trước khi trả lời\n\n### Bước 4: Xử lý Đặc biệt cho Video và Hướng dẫn\n- **QUY TẮC QUAN TRỌNG**: Chỉ dựa vào TIÊU ĐỀ file .mp4 để xác định nội dung video\n- **KHÔNG XEM** được nội dung bên trong video, chỉ phân tích tiêu đề\n- **THỨ TỰ ƯU TIÊN**:\n  1. Tìm file .mp4 có tiêu đề khớp với yêu cầu → Trả link ngay lập tức\n  2. Sau đó mới tìm nội dung trong tài liệu văn bản khác\n- **VÍ DỤ**: Hỏi \"hướng dẫn lặp quạt 3 cánh\" → Tìm tiêu đề .mp4 chứa \"quạt 3 cánh\" hoặc \"lặp quạt\"\n- Kiểm tra trong file Excel/CSV có chứa URL video với tiêu đề phù hợp\n\n## Nguyên tắc Hoạt động\n\n### ✅ PHẢI LÀM\n- **LUÔN KIỂM TRA TIÊU ĐỀ TRƯỚC**: Quét toàn bộ danh sách tiêu đề tài liệu trước khi tìm kiếm\n- **ƯU TIÊN VIDEO .MP4**: Tìm file .mp4 có tiêu đề liên quan đầu tiên\n- **CHỈ DỰA VÀO TIÊU ĐỀ**: Không suy đoán nội dung video, chỉ phân tích tiêu đề file\n- **THỨ TỰ**: Video .mp4 trước → Link ngay → Sau đó mới tìm tài liệu khác\n- **ĐỌC CHÍNH XÁC**: Đọc kỹ toàn bộ nội dung liên quan trước khi trả lời\n- **TRÍCH XUẤT NGUYÊN VĂN**: Copy chính xác thông tin từ tài liệu\n- Cung cấp thông tin chính xác 100% từ nguồn dữ liệu\n- Trả về link video clickable để người dùng xem trực tiếp\n- **GHI RÕ NGUỒN**: Luôn chỉ rõ thông tin lấy từ tài liệu nào\n\n### ❌ KHÔNG ĐƯỢC LÀM\n- Bịa đặt hoặc suy diễn nội dung video từ tiêu đề\n- **KHÔNG ĐOÁN** nội dung bên trong file .mp4\n- **KHÔNG ĐỌC LƯỚT**: Phải đọc kỹ toàn bộ nội dung liên quan\n- **KHÔNG THAY ĐỔI SỐ LIỆU**: Giữ nguyên các con số từ tài liệu gốc\n- **KHÔNG SỬ DỤNG KIẾN THỨC CŨ**: Chỉ dựa vào tài liệu được tìm thấy\n- Bỏ qua việc kiểm tra tiêu đề trước khi tìm kiếm\n- Tìm tài liệu khác trước khi kiểm tra video .mp4\n- Trả lời mà không kiểm tra danh sách tiêu đề đầy đủ\n- Đưa ra thông tin không chính xác về video\n- **KHÔNG KẾT HỢP THÔNG TIN**: Mỗi câu trả lời phải có nguồn rõ ràng\n\n## Cách Phản hồi\n\n### Khi tìm thấy video .mp4 phù hợp:\n```\n🎥 **TÌM THẤY VIDEO HƯỚNG DẪN**: \n\n👉 **[Tiêu đề video]** - [Link video trực tiếp - Click để xem]\n\n📝 **Ghi chú**: Video được xác định dựa trên tiêu đề \"[tiêu đề file]\"\n\n---\n📚 **Thông tin bổ sung từ tài liệu khác** (nếu có):\n[Nội dung từ tài liệu văn bản liên quan]\n**Nguồn**: [Tên file cụ thể]\n```\n\n### Khi tìm thấy thông tin khác:\n```\nDựa trên tài liệu **[tên tài liệu cụ thể]**, tôi tìm thấy thông tin chính xác sau:\n\n**\"[Trích dẫn nguyên văn từ tài liệu]\"**\n\n[Nếu có video]: 🎥 Link video: [URL]\n\n📋 **Nguồn chính xác**: [Tên file/tài liệu] - [Vị trí trong tài liệu nếu có]\n```\n\n### Khi có thông tin số liệu cụ thể:\n```\nTheo tài liệu **[tên file]**, thông tin chính xác là:\n\n🔍 **[Câu hỏi]**: **[Trả lời nguyên văn từ tài liệu]**\n\n📝 **Trích dẫn nguyên văn**: \"[Đoạn văn chính xác từ tài liệu]\"\n\n⚠️ **Lưu ý**: Thông tin này chỉ áp dụng cho [tên sản phẩm cụ thể]\n\n📋 **Nguồn**: [Tên file cụ thể]\n```\n\n### Ví dụ cụ thể cho câu hỏi bảo hành:\n```\n🔍 **Câu hỏi**: \"ổ cảm điện quang bảo hành bao lâu?\"\n\n✅ **Cách trả lời đúng**:\nTheo tài liệu **[tên file]**, thông tin chính xác là:\n\n🛡️ **Ổ cảm điện quang được bảo hành: 12 tháng**\n\n📝 **Trích dẫn nguyên văn**: \"[Đoạn văn chính xác từ tài liệu chứa thông tin về ổ cảm điện quang và thời hạn 12 tháng]\"\n\n📋 **Nguồn**: [Tên file chứa thông tin này]\n\n❌ **TUYỆT ĐỐI KHÔNG ĐƯỢC** trả lời: \"6 tháng\" nếu tài liệu ghi \"12 tháng\"\n```\n\n### Khi không tìm thấy thông tin:\n```\nTôi đã tìm kiếm trong toàn bộ kho tài liệu nhưng không tìm thấy thông tin về [chủ đề]. \n\nBạn có thể cung cấp thêm chi tiết hoặc từ khóa khác để tôi hỗ trợ tốt hơn không?\n```\n\n### Khi cần làm rõ:\n```\nĐể tôi có thể hỗ trợ chính xác, bạn có thể làm rõ thêm về:\n- [Câu hỏi cụ thể 1]\n- [Câu hỏi cụ thể 2]\n```\n\n## Lưu ý Đặc biệt\n\n1. **KIỂM TRA TIÊU ĐỀ ĐẦU TIÊN**: Luôn quét danh sách tiêu đề tài liệu trước mọi thao tác khác\n2. **GIỚI HẠN VIDEO**: Chỉ biết nội dung video qua tiêu đề file .mp4, không xem được bên trong\n3. **THỨ TỰ XỬ LÝ**: Tiêu đề .mp4 → Link video → Tài liệu văn bản → Tổng hợp\n4. **VÍ DỤ THỰC TẾ**: \n   - Hỏi: \"hướng dẫn lặp quạt 3 cánh\"\n   - Tìm: Tiêu đề chứa \"quạt 3 cánh\", \"lặp quạt\", \"hướng dẫn quạt\"\n   - Trả về: Link video ngay lập tức\n5. **Từ khóa Matching**: So khớp từ khóa trong câu hỏi với tiêu đề file\n6. **Link Click-able**: Đảm bảo link video có thể click trực tiếp\n7. **Kiểm tra Metadata**: Xem xét metadata của file Excel/CSV chứa URL video\n8. **VÍ DỤ LỖI CẦN TRÁNH**: \n   - ❌ Tài liệu ghi \"12 tháng\" nhưng trả lời \"6 tháng\"\n   - ✅ Phải trả lời chính xác \"12 tháng\" như trong tài liệu\n   \n9. **TRƯỜNG HỢP THỰC TẾ CẦN CHÚ Ý**:\n   ```\n   🔍 Câu hỏi: \"ổ cảm điện quang bảo hành bao lâu?\"\n   \n   ❌ SAI: \"Ổ cảm điện quang được bảo hành 6 tháng\"\n   ✅ ĐÚNG: \"Theo tài liệu [tên file], ổ cảm điện quang được bảo hành 12 tháng\"\n   \n   📝 Nguyên nhân lỗi: Đọc nhầm hoặc lấy thông tin từ sản phẩm khác\n   🔧 Cách khắc phục: Đọc kỹ đoạn văn chứa từ \"ổ cảm điện quang\" và \"bảo hành\"\n   ```\n\n10. **NGUYÊN TẮC VÀNG**: Nếu không chắc chắn, đọc lại tài liệu một lần nữa\n\n## Công cụ Cần sử dụng\n- Supabase Vector Store Query Tool\n- Document Analysis Tool  \n- Excel/CSV Reader Tool\n- Video Link Extractor Tool\n\n---\n*Ghi nhớ: Tính chính xác 100% là ưu tiên tuyệt đối. Luôn đọc kỹ, trích xuất nguyên văn, và kiểm tra lại trước khi trả lời. Mọi sai sót về số liệu đều không được chấp nhận.*"
+          "systemMessage": "=# Prompt cho AI Agent N8n - Trợ lý Tài liệu Thông minh\n\n## Vai trò và Chức năng\nBạn là một trợ lý AI chuyên nghiệp, giúp tìm kiếm và truy xuất thông tin từ kho tài liệu đa định dạng. Nhiệm vụ chính của bạn là:\n\n- Tìm kiếm thông tin chính xác từ các tài liệu văn bản (TXT, DOC, PDF)\n- Truy xuất dữ liệu từ các file bảng tính (CSV, Excel)\n- Xử lý và cung cấp link truy cập video khi được yêu cầu\n- Đảm bảo tính chính xác và đầy đủ của thông tin được cung cấp\n\n## Quy trình Xử lý Yêu cầu\n\n### Bước 1: Phân tích Yêu cầu và Kiểm tra Tiêu đề\n- Đọc kỹ câu hỏi của người dùng\n- **LUÔN KIỂM TRA TIÊU ĐỀ TÀI LIỆU TRƯỚC**: Quét qua tất cả tiêu đề để tìm tài liệu liên quan\n- Ưu tiên tìm file .mp4 có tiêu đề khớp với yêu cầu (ví dụ: \"hướng dẫn lặp quạt 3 cánh\" → tìm tiêu đề chứa \"quạt 3 cánh\", \"lặp quạt\", \"hướng dẫn lắp quạt\")\n- Nếu câu hỏi không rõ ràng, yêu cầu làm rõ thêm\n\n### Bước 2: Truy vấn Supabase Vector Store\n- **BẮT BUỘC**: Luôn thực hiện tìm kiếm trong Supabase Vector Store\n- Sử dụng từ khóa liên quan để tìm kiếm toàn diện\n- Kiểm tra tất cả kết quả trả về, bao gồm cả metadata của video\n\n### Bước 3: Kiểm tra và Xác thực Dữ liệu\n- Kiểm tra kỹ tiêu đề và nội dung của tài liệu tìm được\n- Đối chiếu thông tin với yêu cầu của người dùng\n- Xác nhận tính chính xác trước khi phản hồi\n\n### Bước 4: Xử lý Đặc biệt cho Video và Hướng dẫn\n- **QUY TẮC QUAN TRỌNG**: Chỉ dựa vào TIÊU ĐỀ file .mp4 để xác định nội dung video\n- **KHÔNG XEM** được nội dung bên trong video, chỉ phân tích tiêu đề\n- **THỨ TỰ ƯU TIÊN**:\n  1. Tìm file .mp4 có tiêu đề khớp với yêu cầu → Trả link ngay lập tức\n  2. Sau đó mới tìm nội dung trong tài liệu văn bản khác\n- **VÍ DỤ**: Hỏi \"hướng dẫn lặp quạt 3 cánh\" → Tìm tiêu đề .mp4 chứa \"quạt 3 cánh\" hoặc \"lặp quạt\"\n- Kiểm tra trong file Excel/CSV có chứa URL video với tiêu đề phù hợp\n\n## Nguyên tắc Hoạt động\n\n### ✅ PHẢI LÀM\n- **LUÔN KIỂM TRA TIÊU ĐỀ TRƯỚC**: Quét toàn bộ danh sách tiêu đề tài liệu trước khi tìm kiếm\n- **ƯU TIÊN VIDEO .MP4**: Tìm file .mp4 có tiêu đề liên quan đầu tiên\n- **CHỈ DỰA VÀO TIÊU ĐỀ**: Không suy đoán nội dung video, chỉ phân tích tiêu đề file\n- **THỨ TỰ**: Video .mp4 trước → Link ngay → Sau đó mới tìm tài liệu khác\n- Cung cấp thông tin chính xác 100% từ nguồn dữ liệu\n- Trả về link video clickable để người dùng xem trực tiếp\n\n### ❌ KHÔNG ĐƯỢC LÀM\n- Bịa đặt hoặc suy diễn nội dung video từ tiêu đề\n- **KHÔNG ĐOÁN** nội dung bên trong file .mp4\n- Bỏ qua việc kiểm tra tiêu đề trước khi tìm kiếm\n- Tìm tài liệu khác trước khi kiểm tra video .mp4\n- Trả lời mà không kiểm tra danh sách tiêu đề đầy đủ\n- Đưa ra thông tin không chính xác về video\n\n## Cách Phản hồi\n\n### Khi tìm thấy video .mp4 phù hợp:\n```\n🎥 **TÌM THẤY VIDEO HƯỚNG DẪN**: \n\n👉 **[Tiêu đề video]** - [Link video trực tiếp - Click để xem]\n\n📝 **Ghi chú**: Video được xác định dựa trên tiêu đề \"[tiêu đề file]\"\n\n---\n📚 **Thông tin bổ sung từ tài liệu khác** (nếu có):\n[Nội dung từ tài liệu văn bản liên quan]\n```\n\n### Khi tìm thấy thông tin khác:\n```\nDựa trên tài liệu [tên tài liệu], tôi tìm thấy thông tin sau:\n\n[Nội dung chính xác từ tài liệu]\n\n[Nếu có video]: 🎥 Link video: [URL]\nNguồn: [Tên file/tài liệu]\n```\n\n### Khi không tìm thấy thông tin:\n```\nTôi đã tìm kiếm trong toàn bộ kho tài liệu nhưng không tìm thấy thông tin về [chủ đề]. \n\nBạn có thể cung cấp thêm chi tiết hoặc từ khóa khác để tôi hỗ trợ tốt hơn không?\n```\n\n### Khi cần làm rõ:\n```\nĐể tôi có thể hỗ trợ chính xác, bạn có thể làm rõ thêm về:\n- [Câu hỏi cụ thể 1]\n- [Câu hỏi cụ thể 2]\n```\n\n## Lưu ý Đặc biệt\n\n1. **KIỂM TRA TIÊU ĐỀ ĐẦU TIÊN**: Luôn quét danh sách tiêu đề tài liệu trước mọi thao tác khác\n2. **GIỚI HẠN VIDEO**: Chỉ biết nội dung video qua tiêu đề file .mp4, không xem được bên trong\n3. **THỨ TỰ XỬ LÝ**: Tiêu đề .mp4 → Link video → Tài liệu văn bản → Tổng hợp\n4. **VÍ DỤ THỰC TẾ**: \n   - Hỏi: \"hướng dẫn lặp quạt 3 cánh\"\n   - Tìm: Tiêu đề chứa \"quạt 3 cánh\", \"lặp quạt\", \"hướng dẫn quạt\"\n   - Trả về: Link video ngay lập tức\n5. **Từ khóa Matching**: So khớp từ khóa trong câu hỏi với tiêu đề file\n6. **Link Click-able**: Đảm bảo link video có thể click trực tiếp\n7. **Kiểm tra Metadata**: Xem xét metadata của file Excel/CSV chứa URL video\n\n## Công cụ Cần sử dụng\n- Supabase Vector Store Query Tool\n- Document Analysis Tool  \n- Excel/CSV Reader Tool\n- Video Link Extractor Tool\n\n---\n*Ghi nhớ: Tính chính xác và đầy đủ là ưu tiên hàng đầu. Luôn tìm kiếm trước khi trả lời.*"
         }
       },
-      "id": "475659d2-fd8f-4436-a51a-77429623d2e1",
+      "id": "e48cb969-4ca9-43ce-a6f4-5e2ce097130e",
       "name": "RAG AI Agent",
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 1.6,
@@ -530,6 +535,29 @@
                     "id": "fc193b06-363b-4699-a97d-e5a850138b0e",
                     "leftValue": "={{ $('Set File ID').item.json.file_type }}",
                     "rightValue": "=application/vnd.google-apps.spreadsheet",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "id": "b3b66a9e-8aca-4f0d-9864-f2e03c7a27cd",
+                    "leftValue": "",
+                    "rightValue": "",
                     "operator": {
                       "type": "string",
                       "operation": "equals",
@@ -638,7 +666,7 @@
           "fallbackOutput": 3
         }
       },
-      "id": "1ceb47a7-44bb-46be-a1ab-5a3ab4c1b1e1",
+      "id": "d3c26732-25ac-4758-845f-42df5c68ca98",
       "name": "Switch",
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3,
@@ -652,15 +680,15 @@
         "mode": "insert",
         "tableName": {
           "__rl": true,
-          "value": "documents",
+          "value": "documents1",
           "mode": "list",
-          "cachedResultName": "documents"
+          "cachedResultName": "documents1"
         },
         "options": {
-          "queryName": "match_documents"
+          "queryName": "match_documents1"
         }
       },
-      "id": "e1204833-4ffb-4335-9645-e85e95682900",
+      "id": "75d2bc7d-1a6f-4e65-93dc-babd76ba117c",
       "name": "Insert into Supabase Vectorstore",
       "type": "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
       "typeVersion": 1,
@@ -670,8 +698,8 @@
       ],
       "credentials": {
         "supabaseApi": {
-          "id": "5Y1Oqex0loIlvr2b",
-          "name": "Supabase account_CSKH"
+          "id": "VWELejOYG6sdc09V",
+          "name": "Nhuannguyen_supabase"
         }
       }
     },
@@ -680,7 +708,7 @@
         "operation": "xlsx",
         "options": {}
       },
-      "id": "aedf77fb-b6e2-4a38-a21a-dba192e565c0",
+      "id": "d789cebe-1135-40a7-99ea-9508536a470d",
       "name": "Extract from Excel",
       "type": "n8n-nodes-base.extractFromFile",
       "typeVersion": 1,
@@ -715,7 +743,7 @@
         2860,
         640
       ],
-      "id": "e5805b54-4778-49c9-80e7-4bf5410b5779",
+      "id": "804513b9-fd2a-4f3e-8914-f58fe5932af7",
       "name": "Set Schema"
     },
     {
@@ -728,7 +756,7 @@
         1780,
         880
       ],
-      "id": "412d6ae7-4e96-4b64-8ffb-061a2e77c737",
+      "id": "ab9f1029-20c4-4755-8cc8-71a5d69af859",
       "name": "Extract from CSV"
     },
     {
@@ -744,7 +772,7 @@
         0
       ],
       "typeVersion": 1,
-      "id": "9689a5d7-eff2-462a-96ff-4641ebc6c166",
+      "id": "48c7f0ec-5169-45b0-9cb0-6a97f1cb952f",
       "name": "Sticky Note3"
     },
     {
@@ -759,9 +787,9 @@
         },
         "table": {
           "__rl": true,
-          "value": "document_metadata",
+          "value": "document_metadata1",
           "mode": "list",
-          "cachedResultName": "document_metadata"
+          "cachedResultName": "document_metadata1"
         },
         "returnAll": true,
         "options": {}
@@ -772,12 +800,12 @@
         1300,
         300
       ],
-      "id": "39a1f24f-b187-40b3-9cc8-f053481bc136",
+      "id": "ea4f9e9f-1d90-4a7c-ae6f-d2b0474c27ae",
       "name": "List Documents",
       "credentials": {
         "postgres": {
-          "id": "vEJzSvEtz2wK5mnU",
-          "name": "Postgres account 18_CSKH"
+          "id": "ENQfbD0WGxPXU0N5",
+          "name": "nhuannguyen_postgres"
         }
       }
     },
@@ -786,7 +814,7 @@
         "descriptionType": "manual",
         "toolDescription": "Given a file ID, fetches the text from the document.",
         "operation": "executeQuery",
-        "query": "SELECT \n    string_agg(content, ' ') as document_text\nFROM documents\n  WHERE metadata->>'file_id' = $1\nGROUP BY metadata->>'file_id';",
+        "query": "SELECT \n    string_agg(content, ' ') as document_text\nFROM documents1\n  WHERE metadata1->>'file_id' = $1\nGROUP BY metadata1->>'file_id';",
         "options": {
           "queryReplacement": "={{ $fromAI('file_id') }}"
         }
@@ -797,12 +825,12 @@
         1440,
         300
       ],
-      "id": "cbeb40b4-502f-42b7-a828-321e33efd8e2",
+      "id": "16a3248a-0c60-416e-a1c5-a0f05ade0083",
       "name": "Get File Contents",
       "credentials": {
         "postgres": {
-          "id": "vEJzSvEtz2wK5mnU",
-          "name": "Postgres account 18_CSKH"
+          "id": "ENQfbD0WGxPXU0N5",
+          "name": "nhuannguyen_postgres"
         }
       }
     },
@@ -813,9 +841,9 @@
         "toolDescription": "Use RAG to look up information in the knowledgebase.",
         "tableName": {
           "__rl": true,
-          "value": "documents",
+          "value": "documents1",
           "mode": "list",
-          "cachedResultName": "documents"
+          "cachedResultName": "documents1"
         },
         "options": {
           "queryName": "match_documents"
@@ -827,12 +855,12 @@
         1880,
         220
       ],
-      "id": "7ae32dc6-950c-4099-a9e4-2ac613423bbc",
+      "id": "c74fb26b-7d3b-4aa8-9274-fb58d3911ed4",
       "name": "Supabase Vector Store1",
       "credentials": {
         "supabaseApi": {
-          "id": "5Y1Oqex0loIlvr2b",
-          "name": "Supabase account_CSKH"
+          "id": "VWELejOYG6sdc09V",
+          "name": "Nhuannguyen_supabase"
         }
       }
     },
@@ -846,12 +874,12 @@
         1980,
         340
       ],
-      "id": "1bad4ea0-4547-44f3-8454-c64605b1f867",
+      "id": "a5b7217c-1413-4f1a-9c74-3756d028ef6a",
       "name": "Embeddings OpenAI2",
       "credentials": {
         "openAiApi": {
-          "id": "BpciZCOgdpJ79QO1",
-          "name": "OpenAi account 23062025"
+          "id": "Ed8Jh9kqfVkHaB9Y",
+          "name": "OpenAi account 25_API"
         }
       }
     },
@@ -867,13 +895,13 @@
         20,
         580
       ],
-      "id": "93404ed8-a966-4efd-9d30-90d32dd37841",
+      "id": "84aaad8f-b757-47a6-ba3f-ca367dc8735d",
       "name": "Loop Over Items"
     },
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "-- Kích hoạt extension pgvector\nCREATE EXTENSION IF NOT EXISTS vector;\n\n-- Tạo bảng lưu metadata của tài liệu\nCREATE TABLE document_metadata (\n    id TEXT PRIMARY KEY,\n    title TEXT,\n    url TEXT,\n    created_at TIMESTAMP DEFAULT NOW(),\n    schema TEXT\n);\n\n-- Tạo bảng lưu các dòng dữ liệu của tài liệu\nCREATE TABLE document_rows (\n    id SERIAL PRIMARY KEY,\n    dataset_id TEXT REFERENCES document_metadata(id),\n    row_data JSONB  -- Lưu trữ dữ liệu dòng thực tế\n);\n\n-- Tạo bảng lưu trữ tài liệu và embedding của chúng\nCREATE TABLE documents (\n  id BIGSERIAL PRIMARY KEY,\n  content TEXT,  -- Nội dung tài liệu\n  metadata JSONB,  -- Metadata của tài liệu\n  embedding VECTOR(1536)  -- 1536 là kích thước của embedding, có thể thay đổi tùy theo nhu cầu\n);\n\n-- Tạo hàm để tìm kiếm tài liệu dựa trên embedding\nCREATE FUNCTION match_documents (\n  query_embedding VECTOR(1536),\n  match_count INT DEFAULT NULL,\n  filter JSONB DEFAULT '{}'\n) RETURNS TABLE (\n  doc_id BIGINT,\n  content TEXT,\n  metadata JSONB,\n  similarity FLOAT\n)\nLANGUAGE plpgsql\nAS $$\nBEGIN\n  RETURN QUERY\n  SELECT\n    documents.id AS doc_id,  -- Đổi tên cột 'id' của bảng 'documents' thành 'doc_id'\n    documents.content,\n    documents.metadata,\n    1 - (documents.embedding <=> query_embedding) AS similarity\n  FROM documents\n  WHERE documents.metadata @> filter\n  ORDER BY documents.embedding <=> query_embedding\n  LIMIT match_count;\nEND;\n$$;\n",
+        "query": "-- Kích hoạt extension pgvector\nCREATE EXTENSION IF NOT EXISTS vector;\n\n-- Tạo bảng lưu metadata của tài liệu\nCREATE TABLE document_metadata1 (\n    id TEXT PRIMARY KEY,\n    title TEXT,\n    url TEXT,\n    ggdrive_di TEXT,\n    created_at TIMESTAMP DEFAULT NOW(),\n    schema TEXT\n);\n\n-- Tạo bảng lưu các dòng dữ liệu của tài liệu\nCREATE TABLE document_rows1 (\n    id SERIAL PRIMARY KEY,\n    dataset_id TEXT REFERENCES document_metadata1(id),\n    row_data JSONB  -- Lưu trữ dữ liệu dòng thực tế\n);\n\n-- Tạo bảng lưu trữ tài liệu và embedding của chúng\nCREATE TABLE documents1 (\n  id BIGSERIAL PRIMARY KEY,\n  content TEXT,  -- Nội dung tài liệu\n  metadata JSONB,  -- Metadata của tài liệu\n  embedding VECTOR(1536)  -- 1536 là kích thước của embedding, có thể thay đổi tùy theo nhu cầu\n);\n\n-- Tạo hàm để tìm kiếm tài liệu dựa trên embedding\nCREATE FUNCTION match_documents1 (\n  query_embedding VECTOR(1536),\n  match_count INT DEFAULT NULL,\n  filter JSONB DEFAULT '{}'\n) RETURNS TABLE (\n  doc_id BIGINT,\n  content TEXT,\n  metadata JSONB,\n  similarity FLOAT\n)\nLANGUAGE plpgsql\nAS $$\nBEGIN\n  RETURN QUERY\n  SELECT\n    documents1.id AS doc_id,  -- Đổi tên cột 'id' của bảng 'documents1' thành 'doc_id'\n    documents1.content,\n    documents1.metadata,\n    1 - (documents1.embedding <=> query_embedding) AS similarity\n  FROM documents1\n  JOIN document_metadata1 ON documents1.id = document_metadata1.id  -- Liên kết với bảng document_metadata1\n  LEFT JOIN document_rows1 ON document_metadata1.id = document_rows1.dataset_id  -- Liên kết với bảng document_rows1\n  WHERE documents1.metadata @> filter\n  ORDER BY documents1.embedding <=> query_embedding\n  LIMIT match_count;\nEND;\n$$;\n",
         "options": {}
       },
       "type": "n8n-nodes-base.postgres",
@@ -882,19 +910,19 @@
         280,
         100
       ],
-      "id": "0be0958e-6442-4db3-b631-53c9b32c07aa",
+      "id": "90c9d5d7-6917-409a-9c42-3995f7e0cca5",
       "name": "Create Documents Table and Match Function",
       "credentials": {
         "postgres": {
-          "id": "vEJzSvEtz2wK5mnU",
-          "name": "Postgres account 18_CSKH"
+          "id": "ENQfbD0WGxPXU0N5",
+          "name": "nhuannguyen_postgres"
         }
       }
     },
     {
       "parameters": {
         "operation": "delete",
-        "tableId": "document_rows",
+        "tableId": "document_rows1",
         "filters": {
           "conditions": [
             {
@@ -911,14 +939,14 @@
         740,
         600
       ],
-      "id": "d7a9414e-cc40-42c8-b46e-ad4f12a0c390",
+      "id": "5d042743-23d8-4bb7-a0bf-01c4e469c272",
       "name": "Delete Old Data Rows",
       "alwaysOutputData": true,
       "executeOnce": true,
       "credentials": {
         "supabaseApi": {
-          "id": "5Y1Oqex0loIlvr2b",
-          "name": "Supabase account_CSKH"
+          "id": "VWELejOYG6sdc09V",
+          "name": "Nhuannguyen_supabase"
         }
       }
     },
@@ -932,16 +960,17 @@
         },
         "table": {
           "__rl": true,
-          "value": "document_metadata",
+          "value": "document_metadata1",
           "mode": "list",
-          "cachedResultName": "document_metadata"
+          "cachedResultName": "document_metadata1"
         },
         "columns": {
           "mappingMode": "defineBelow",
           "value": {
             "id": "={{ $('Set File ID').item.json.file_id }}",
             "title": "={{ $('Set File ID').item.json.file_title }}",
-            "url": "={{ $('Set File ID').item.json.file_url }}"
+            "url": "={{ $('Set File ID').item.json.file_url }}",
+            "schema": "={{ $('Set File ID').item.json.id }}"
           },
           "matchingColumns": [
             "id"
@@ -993,7 +1022,7 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": false,
-              "removed": true
+              "removed": false
             }
           ],
           "attemptToConvertTypes": false,
@@ -1007,13 +1036,13 @@
         900,
         600
       ],
-      "id": "6f8c731f-37b9-4ace-9e04-7cc564cc4cf9",
+      "id": "03c911a3-938f-4138-b23b-99507ac4f7fb",
       "name": "Insert Document Metadata",
       "executeOnce": true,
       "credentials": {
         "postgres": {
-          "id": "vEJzSvEtz2wK5mnU",
-          "name": "Postgres account 18_CSKH"
+          "id": "ENQfbD0WGxPXU0N5",
+          "name": "nhuannguyen_postgres"
         }
       }
     },
@@ -1026,9 +1055,9 @@
         },
         "table": {
           "__rl": true,
-          "value": "document_rows",
+          "value": "document_rows1",
           "mode": "list",
-          "cachedResultName": "document_rows"
+          "cachedResultName": "document_rows1"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -1080,12 +1109,12 @@
         2220,
         880
       ],
-      "id": "c5ec73a0-b756-4624-97a7-5e56e728b31f",
+      "id": "abb54803-e187-4fed-ac97-80e7af2695af",
       "name": "Insert Table Rows",
       "credentials": {
         "postgres": {
-          "id": "vEJzSvEtz2wK5mnU",
-          "name": "Postgres account 18_CSKH"
+          "id": "ENQfbD0WGxPXU0N5",
+          "name": "nhuannguyen_postgres"
         }
       }
     },
@@ -1099,9 +1128,9 @@
         },
         "table": {
           "__rl": true,
-          "value": "document_metadata",
+          "value": "document_metadata1",
           "mode": "list",
-          "cachedResultName": "document_metadata"
+          "cachedResultName": "document_metadata1"
         },
         "columns": {
           "mappingMode": "defineBelow",
@@ -1174,32 +1203,19 @@
         3080,
         640
       ],
-      "id": "a2b159c1-c4a2-49ce-b9ab-a4faec6909b5",
+      "id": "0f68d07c-876e-4afe-8b2f-4a539f2a8cf9",
       "name": "Update Schema for Document Metadata",
       "credentials": {
         "postgres": {
-          "id": "vEJzSvEtz2wK5mnU",
-          "name": "Postgres account 18_CSKH"
+          "id": "ENQfbD0WGxPXU0N5",
+          "name": "nhuannguyen_postgres"
         }
       }
     },
     {
       "parameters": {
-        "jsCode": "// Lấy hai mảng từ input trong n8n\nconst array1 = $('Aggregate1').first().json.id || [];\nconst array2 = $('Aggregate2').first().json.id || [];\n\n// Tìm các ID không trùng nhau\nconst uniqueIDs = [\n  ...array1.filter(id => !array2.includes(id)), // ID chỉ có trong array1\n  ...array2.filter(id => !array1.includes(id))  // ID chỉ có trong array2\n];\n// Chuyển đổi kết quả thành định dạng mong muốn\nconst result = uniqueIDs.map(id => ({ id }));\n\n// Trả về kết quả\nreturn result;"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        1060,
-        1660
-      ],
-      "id": "839fc4b4-bda5-41d0-9cfd-60140e327a5f",
-      "name": "Code"
-    },
-    {
-      "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT id  FROM public.document_metadata;",
+        "query": "SELECT id,url  FROM public.document_metadata1;",
         "options": {}
       },
       "type": "n8n-nodes-base.postgres",
@@ -1208,175 +1224,13 @@
         320,
         1660
       ],
-      "id": "46c2b210-4cbc-4a65-bc71-24847f72b090",
+      "id": "5cf0c041-d04c-4804-8e48-155762d1419e",
       "name": "Node_postgres",
+      "alwaysOutputData": true,
       "credentials": {
         "postgres": {
-          "id": "vEJzSvEtz2wK5mnU",
-          "name": "Postgres account 18_CSKH"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "authentication": "serviceAccount",
-        "resource": "fileFolder",
-        "returnAll": true,
-        "filter": {
-          "folderId": {
-            "__rl": true,
-            "value": "17AhhZ1lMv23PM2TEdOngMqirnCMfAeY7",
-            "mode": "list",
-            "cachedResultName": "04. N8n_Tro_Ly_Doc",
-            "cachedResultUrl": "https://drive.google.com/drive/folders/17AhhZ1lMv23PM2TEdOngMqirnCMfAeY7"
-          },
-          "whatToSearch": "files",
-          "includeTrashed": false
-        },
-        "options": {
-          "fields": [
-            "id"
-          ]
-        }
-      },
-      "type": "n8n-nodes-base.googleDrive",
-      "typeVersion": 3,
-      "position": [
-        680,
-        1660
-      ],
-      "id": "8f109c2f-1bd9-4796-933c-6fcc43a29aa2",
-      "name": "Node_drive",
-      "alwaysOutputData": true,
-      "credentials": {
-        "googleApi": {
-          "id": "UFYSZcd8CgntABwS",
-          "name": "GSA_N"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "fieldsToAggregate": {
-          "fieldToAggregate": [
-            {
-              "fieldToAggregate": "id"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.aggregate",
-      "typeVersion": 1,
-      "position": [
-        500,
-        1660
-      ],
-      "id": "f1aebd0d-9b02-46a4-824f-db2586f679fb",
-      "name": "Aggregate1"
-    },
-    {
-      "parameters": {
-        "fieldsToAggregate": {
-          "fieldToAggregate": [
-            {
-              "fieldToAggregate": "id"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.aggregate",
-      "typeVersion": 1,
-      "position": [
-        860,
-        1660
-      ],
-      "id": "43abef2c-6f7d-41e2-974f-feb02fe441f3",
-      "name": "Aggregate2"
-    },
-    {
-      "parameters": {
-        "operation": "delete",
-        "tableId": "documents",
-        "filterType": "string",
-        "filterString": "=metadata->>file_id=like.*{{ $('Loop Over Items1').item.json.id }}*"
-      },
-      "id": "e2b57d7c-b28e-4088-86a9-77ee807a1415",
-      "name": "Delete Old Doc Rows1",
-      "type": "n8n-nodes-base.supabase",
-      "typeVersion": 1,
-      "position": [
-        2080,
-        1660
-      ],
-      "alwaysOutputData": true,
-      "credentials": {
-        "supabaseApi": {
-          "id": "5Y1Oqex0loIlvr2b",
-          "name": "Supabase account_CSKH"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "delete",
-        "tableId": "document_metadata",
-        "filters": {
-          "conditions": [
-            {
-              "keyName": "id",
-              "condition": "eq",
-              "keyValue": "={{ $('Loop Over Items1').item.json.id }}"
-            }
-          ]
-        }
-      },
-      "type": "n8n-nodes-base.supabase",
-      "typeVersion": 1,
-      "position": [
-        1900,
-        1660
-      ],
-      "id": "61e24eba-2b5a-4324-8061-4f979548a35b",
-      "name": "Delete Old Data Rows2",
-      "alwaysOutputData": true,
-      "executeOnce": true,
-      "credentials": {
-        "supabaseApi": {
-          "id": "5Y1Oqex0loIlvr2b",
-          "name": "Supabase account_CSKH"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "delete",
-        "tableId": "document_rows",
-        "filters": {
-          "conditions": [
-            {
-              "keyName": "dataset_id",
-              "condition": "eq",
-              "keyValue": "={{ $json.id }}"
-            }
-          ]
-        }
-      },
-      "type": "n8n-nodes-base.supabase",
-      "typeVersion": 1,
-      "position": [
-        1720,
-        1660
-      ],
-      "id": "75578791-e411-41d6-8415-72ec41d9b78f",
-      "name": "Delete Old Data Rows1",
-      "alwaysOutputData": true,
-      "executeOnce": true,
-      "credentials": {
-        "supabaseApi": {
-          "id": "5Y1Oqex0loIlvr2b",
-          "name": "Supabase account_CSKH"
+          "id": "ENQfbD0WGxPXU0N5",
+          "name": "nhuannguyen_postgres"
         }
       }
     },
@@ -1392,7 +1246,7 @@
           "conditions": [
             {
               "id": "7134e92c-2e4f-49b3-a0d1-dbe856ebef2c",
-              "leftValue": "={{ $('Code').item}}",
+              "leftValue": "={{ $('Code1').item}}",
               "rightValue": "",
               "operator": {
                 "type": "object",
@@ -1408,46 +1262,11 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1240,
+        1840,
         1660
       ],
-      "id": "9f1ad845-12f0-4894-b84e-e887d2715c9d",
+      "id": "ebee0dd2-6331-439e-82db-cc4bd40cb43a",
       "name": "If"
-    },
-    {
-      "parameters": {
-        "options": {
-          "reset": false
-        }
-      },
-      "type": "n8n-nodes-base.splitInBatches",
-      "typeVersion": 3,
-      "position": [
-        1460,
-        1640
-      ],
-      "id": "1d0b07c0-e06d-44cf-8aa2-0767fdc3c98f",
-      "name": "Loop Over Items1"
-    },
-    {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "field": "hours"
-            }
-          ]
-        }
-      },
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.2,
-      "position": [
-        100,
-        1660
-      ],
-      "id": "f9e83726-651b-44f2-b287-70007b61746b",
-      "name": "Schedule Trigger",
-      "disabled": true
     },
     {
       "parameters": {
@@ -1465,7 +1284,7 @@
         2000,
         1300
       ],
-      "id": "8c7ef012-8bce-4704-9a6f-f03d815a6506",
+      "id": "03935469-e899-4296-896f-dad4bf8c38e2",
       "name": "Delete File",
       "credentials": {
         "googleDriveOAuth2Api": {
@@ -1479,7 +1298,7 @@
         "operation": "text",
         "options": {}
       },
-      "id": "253ba4cf-be8e-402a-9b0d-df4d62322de8",
+      "id": "eecc1df0-b647-41cc-8b5e-5349e0d0d85e",
       "name": "Extract Document Text1",
       "type": "n8n-nodes-base.extractFromFile",
       "typeVersion": 1,
@@ -1492,7 +1311,7 @@
     {
       "parameters": {
         "operation": "delete",
-        "tableId": "document_metadata",
+        "tableId": "document_metadata1",
         "filters": {
           "conditions": [
             {
@@ -1509,14 +1328,14 @@
         2160,
         1300
       ],
-      "id": "0f083fec-b8ee-46f7-bc98-c0da479fd710",
+      "id": "4c3e7819-783d-458b-aa96-3730f8f13426",
       "name": "Delete Old Data Rows3",
       "alwaysOutputData": true,
       "executeOnce": true,
       "credentials": {
         "supabaseApi": {
-          "id": "5Y1Oqex0loIlvr2b",
-          "name": "Supabase account_CSKH"
+          "id": "VWELejOYG6sdc09V",
+          "name": "Nhuannguyen_supabase"
         }
       }
     },
@@ -1541,7 +1360,7 @@
         },
         "options": {}
       },
-      "id": "21b173e7-cee5-4c6c-bcf8-ed58817a2497",
+      "id": "8ea55bd1-88a2-4ce8-938a-4a607d9de218",
       "name": "Convert to Google Doc",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.1,
@@ -1586,8 +1405,252 @@
         940,
         820
       ],
-      "id": "fa5005d5-8f38-4737-b8cc-88843e4c54ce",
+      "id": "cca43321-5662-47e1-a90e-11e5642cac68",
       "name": "If1"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "id"
+            },
+            {
+              "fieldToAggregate": "url"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        500,
+        1660
+      ],
+      "id": "426ca1a8-da15-4685-878a-9593bb8f70f4",
+      "name": "AggregateDB"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Lấy hai mảng từ input trong n8n\nconst array1 = $('AggregateDB').first().json.id || [];\nconsole.log('array1: ',array1);\nconst array2 = $('AggregateGGDRive').first().json.id.map(item => item.id) || [];\nconsole.log('array2: ',array2)\n\nconst uniqueIDs = [\n  ...array1.filter(id => !array2.includes(id)), // ID chỉ có trong array1\n  ...array2.filter(id => !array1.includes(id))  // ID chỉ có trong array2\n];\nconsole.log('arrFilter1: ',array1.filter(id => !array2.includes(id)))\nconsole.log('arrFilter2: ',array2.filter(id => !array1.includes(id)))\nconsole.log('uniqueIDS: ',uniqueIDs)\n// Chuyển đổi kết quả thành định dạng mong muốn\nconst result = uniqueIDs.map(id => ({ id }));\n\n// Trả về kết quả\nreturn result;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1160,
+        1660
+      ],
+      "id": "2507d026-9743-4051-87dc-c83d882f8364",
+      "name": "Code1",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        20,
+        1660
+      ],
+      "id": "6097eb14-37a5-4489-b217-5f71d8c2340c",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "batchSize": "=1",
+        "options": {
+          "reset": false
+        }
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        2120,
+        1640
+      ],
+      "id": "6ec50bd2-7abf-4771-999b-ae9b9cfa47e4",
+      "name": "Loop Over Items2"
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "tableId": "document_rows1",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "dataset_id",
+              "condition": "eq",
+              "keyValue": "={{ $json.id }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        2380,
+        1680
+      ],
+      "id": "2447a1c9-e2f2-457c-8301-70cb6dde3f68",
+      "name": "Delete Document_Rows",
+      "alwaysOutputData": true,
+      "executeOnce": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "VWELejOYG6sdc09V",
+          "name": "Nhuannguyen_supabase"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "tableId": "document_metadata1",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "id",
+              "condition": "eq",
+              "keyValue": "={{ $('Loop Over Items2').item.json.id }}"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        2560,
+        1680
+      ],
+      "id": "e730988a-d0fb-4b1b-abe5-295fdba39fab",
+      "name": "Delete Document_Metadata",
+      "alwaysOutputData": true,
+      "executeOnce": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "VWELejOYG6sdc09V",
+          "name": "Nhuannguyen_supabase"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "tableId": "documents1",
+        "filterType": "string",
+        "filterString": "=metadata->>file_id=like.*{{ $('Loop Over Items2').item.json.id }}*"
+      },
+      "id": "d8f3cdfd-41b3-4601-b762-73d98a66f016",
+      "name": "Delete Documents",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        3220,
+        1680
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "supabaseApi": {
+          "id": "VWELejOYG6sdc09V",
+          "name": "Nhuannguyen_supabase"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "69a951b3-58cf-4caf-9f9d-70f1bdcb2e78",
+              "leftValue": "={{ $json.id }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2840,
+        1680
+      ],
+      "id": "e2d64877-573f-46d3-939d-27c292e7bb16",
+      "name": "If3"
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "resource": "fileFolder",
+        "returnAll": true,
+        "filter": {
+          "folderId": {
+            "__rl": true,
+            "value": "12PSlCPB3dyzN1mUws0fhYiuGSoLd8Lnf",
+            "mode": "list",
+            "cachedResultName": "01. GGDrive_Doc",
+            "cachedResultUrl": "https://drive.google.com/drive/folders/12PSlCPB3dyzN1mUws0fhYiuGSoLd8Lnf"
+          },
+          "whatToSearch": "files",
+          "includeTrashed": false
+        },
+        "options": {
+          "fields": [
+            "id"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        720,
+        1660
+      ],
+      "id": "275c8c8c-3bcf-4551-ad6c-0ceb72690f4e",
+      "name": "Node_drive",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleApi": {
+          "id": "UFYSZcd8CgntABwS",
+          "name": "GSA_N"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "destinationFieldName": "id",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        940,
+        1660
+      ],
+      "id": "0f823546-4a01-4c46-9d66-d0c300ba068f",
+      "name": "AggregateGGDRive"
     }
   ],
   "pinData": {},
@@ -1807,6 +1870,7 @@
             "index": 0
           }
         ],
+        [],
         [
           {
             "node": "Extract Document Text1",
@@ -1973,73 +2037,7 @@
       "main": [
         [
           {
-            "node": "Aggregate1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Node_drive": {
-      "main": [
-        [
-          {
-            "node": "Aggregate2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Aggregate1": {
-      "main": [
-        [
-          {
-            "node": "Node_drive",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Aggregate2": {
-      "main": [
-        [
-          {
-            "node": "Code",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Code": {
-      "main": [
-        [
-          {
-            "node": "If",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Delete Old Data Rows2": {
-      "main": [
-        [
-          {
-            "node": "Delete Old Doc Rows1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Delete Old Data Rows1": {
-      "main": [
-        [
-          {
-            "node": "Delete Old Data Rows2",
+            "node": "AggregateDB",
             "type": "main",
             "index": 0
           }
@@ -2050,41 +2048,7 @@
       "main": [
         [
           {
-            "node": "Loop Over Items1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Loop Over Items1": {
-      "main": [
-        [],
-        [
-          {
-            "node": "Delete Old Data Rows1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Delete Old Doc Rows1": {
-      "main": [
-        [
-          {
-            "node": "Loop Over Items1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Schedule Trigger": {
-      "main": [
-        [
-          {
-            "node": "Node_postgres",
+            "node": "Loop Over Items2",
             "type": "main",
             "index": 0
           }
@@ -2152,17 +2116,128 @@
           }
         ]
       ]
+    },
+    "AggregateDB": {
+      "main": [
+        [
+          {
+            "node": "Node_drive",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Node_postgres",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items2": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Delete Document_Rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Document_Rows": {
+      "main": [
+        [
+          {
+            "node": "Delete Document_Metadata",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Document_Metadata": {
+      "main": [
+        [
+          {
+            "node": "If3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete Documents": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If3": {
+      "main": [
+        [
+          {
+            "node": "Delete Documents",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Node_drive": {
+      "main": [
+        [
+          {
+            "node": "AggregateGGDRive",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AggregateGGDRive": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": true,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "a9045c01-9c43-4cb0-a28e-08533dbb95cb",
+  "versionId": "e0a1463a-ecb8-4718-ba11-d444a3c3c896",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "94a383c02457267bcc44878635a0fa02b7d3206c5479bfc8890faa812e2bbd97"
   },
-  "id": "7NPTdTbMt1JcEX0o",
+  "id": "7epuSnTbdQ1jCniD",
   "tags": []
 }
