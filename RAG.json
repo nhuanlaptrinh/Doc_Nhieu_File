@@ -30,11 +30,11 @@
             "metadataValues": [
               {
                 "name": "=file_id",
-                "value": "={{ $('Set File ID').first().json.file_id }}"
+                "value": "={{ $('Set File ID_!').first().json.file_id }}"
               },
               {
                 "name": "file_title",
-                "value": "={{ $('Set File ID').first().json.file_title }}"
+                "value": "={{ $('Set File ID_!').first().json.file_title }}"
               }
             ]
           }
@@ -106,13 +106,14 @@
         "operation": "download",
         "fileId": {
           "__rl": true,
-          "value": "={{ $('Set File ID').item.json.file_id }}",
+          "value": "={{ $('Set File ID_!').item.json.file_id }}",
           "mode": "id"
         },
         "options": {
           "googleFileConversion": {
             "conversion": {
-              "docsToFormat": "text/plain"
+              "docsToFormat": "text/plain",
+              "sheetsToFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
             }
           }
         }
@@ -248,53 +249,6 @@
           "name": "Nhuannguyen_supabase"
         }
       }
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "10646eae-ae46-4327-a4dc-9987c2d76173",
-              "name": "file_id",
-              "value": "={{ $json.id }}",
-              "type": "string"
-            },
-            {
-              "id": "f4536df5-d0b1-4392-bf17-b8137fb31a44",
-              "name": "file_type",
-              "value": "={{ $json.mimeType }}",
-              "type": "string"
-            },
-            {
-              "id": "77d782de-169d-4a46-8a8e-a3831c04d90f",
-              "name": "file_title",
-              "value": "={{ $json.name }}",
-              "type": "string"
-            },
-            {
-              "id": "9bde4d7f-e4f3-4ebd-9338-dce1350f9eab",
-              "name": "file_url",
-              "value": "={{ $json.webViewLink }}",
-              "type": "string"
-            },
-            {
-              "id": "b8735aa6-4e47-4197-9f36-6559fa4d4420",
-              "name": "id",
-              "value": "={{ $json.id }}",
-              "type": "string"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "063a0f23-fcbe-479c-8a60-269a9db0e695",
-      "name": "Set File ID",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        280,
-        600
-      ]
     },
     {
       "parameters": {
@@ -485,7 +439,7 @@
                 },
                 "conditions": [
                   {
-                    "leftValue": "={{ $('Set File ID').item.json.file_type }}",
+                    "leftValue": "={{ $('Set File ID_!').item.json.file_type }}",
                     "rightValue": "application/pdf",
                     "operator": {
                       "type": "string",
@@ -497,7 +451,7 @@
                 "combinator": "and"
               },
               "renameOutput": true,
-              "outputKey": "pdf"
+              "outputKey": "Pdf"
             },
             {
               "conditions": {
@@ -510,7 +464,7 @@
                 "conditions": [
                   {
                     "id": "2ae7faa7-a936-4621-a680-60c512163034",
-                    "leftValue": "={{ $('Set File ID').item.json.file_type }}",
+                    "leftValue": "={{ $('Set File ID_!').item.json.file_type }}",
                     "rightValue": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     "operator": {
                       "type": "string",
@@ -520,30 +474,9 @@
                   }
                 ],
                 "combinator": "and"
-              }
-            },
-            {
-              "conditions": {
-                "options": {
-                  "caseSensitive": true,
-                  "leftValue": "",
-                  "typeValidation": "strict",
-                  "version": 1
-                },
-                "conditions": [
-                  {
-                    "id": "fc193b06-363b-4699-a97d-e5a850138b0e",
-                    "leftValue": "={{ $('Set File ID').item.json.file_type }}",
-                    "rightValue": "=application/vnd.google-apps.spreadsheet",
-                    "operator": {
-                      "type": "string",
-                      "operation": "equals",
-                      "name": "filter.operator.equals"
-                    }
-                  }
-                ],
-                "combinator": "and"
-              }
+              },
+              "renameOutput": true,
+              "outputKey": "Excel 1"
             },
             {
               "conditions": {
@@ -556,8 +489,8 @@
                 "conditions": [
                   {
                     "id": "b3b66a9e-8aca-4f0d-9864-f2e03c7a27cd",
-                    "leftValue": "",
-                    "rightValue": "",
+                    "leftValue": "={{ $('Set File ID_!').item.json.file_type }}",
+                    "rightValue": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     "operator": {
                       "type": "string",
                       "operation": "equals",
@@ -566,7 +499,84 @@
                   }
                 ],
                 "combinator": "and"
-              }
+              },
+              "renameOutput": true,
+              "outputKey": "Excel 3"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "id": "fc193b06-363b-4699-a97d-e5a850138b0e",
+                    "leftValue": "={{ $('Set File ID_!').item.json.file_type }}",
+                    "rightValue": "=application/vnd.google-apps.spreadsheet",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Excel 2"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "id": "bb391e81-4667-4854-8033-e2771d1f69fb",
+                    "leftValue": "={{ $('Set File ID_!').item.json.file_type }}",
+                    "rightValue": "application/vnd.ms-excel",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Excel 4"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 1
+                },
+                "conditions": [
+                  {
+                    "id": "f5de71c8-289a-477b-ae62-f336e7286a0c",
+                    "leftValue": "={{ $('Set File ID_!').item.json.file_type }}",
+                    "rightValue": "text/csv",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Csv"
             },
             {
               "conditions": {
@@ -579,7 +589,7 @@
                 "conditions": [
                   {
                     "id": "b69f5605-0179-4b02-9a32-e34bb085f82d",
-                    "leftValue": "={{ $('Set File ID').item.json.file_type }}",
+                    "leftValue": "={{ $('Set File ID_!').item.json.file_type }}",
                     "rightValue": "application/vnd.google-apps.document",
                     "operator": {
                       "type": "string",
@@ -589,7 +599,9 @@
                   }
                 ],
                 "combinator": "and"
-              }
+              },
+              "renameOutput": true,
+              "outputKey": "Txt"
             },
             {
               "conditions": {
@@ -602,7 +614,7 @@
                 "conditions": [
                   {
                     "id": "a605d52b-093e-47ce-bed4-6c040b465b79",
-                    "leftValue": "={{ $('Set File ID').item.json.file_type }}",
+                    "leftValue": "={{ $('Set File ID_!').item.json.file_type }}",
                     "rightValue": "application/msword",
                     "operator": {
                       "type": "string",
@@ -612,7 +624,9 @@
                   }
                 ],
                 "combinator": "and"
-              }
+              },
+              "renameOutput": true,
+              "outputKey": "Word 1"
             },
             {
               "conditions": {
@@ -625,7 +639,7 @@
                 "conditions": [
                   {
                     "id": "043262f3-55dc-40b0-af44-f2f67aae3aa9",
-                    "leftValue": "={{ $('Set File ID').item.json.file_type }}",
+                    "leftValue": "={{ $('Set File ID_!').item.json.file_type }}",
                     "rightValue": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
                     "operator": {
                       "type": "string",
@@ -635,7 +649,9 @@
                   }
                 ],
                 "combinator": "and"
-              }
+              },
+              "renameOutput": true,
+              "outputKey": "Word 2"
             },
             {
               "conditions": {
@@ -648,7 +664,7 @@
                 "conditions": [
                   {
                     "id": "291a9806-5b16-46b4-a253-4806491d92bc",
-                    "leftValue": "={{ $('Set File ID').item.json.file_type }}",
+                    "leftValue": "={{ $('Set File ID_!').item.json.file_type }}",
                     "rightValue": "application/vnd.ms-word",
                     "operator": {
                       "type": "string",
@@ -658,12 +674,18 @@
                   }
                 ],
                 "combinator": "and"
-              }
+              },
+              "renameOutput": true,
+              "outputKey": "Word 3"
+            },
+            {
+              "renameOutput": true,
+              "outputKey": "None"
             }
           ]
         },
         "options": {
-          "fallbackOutput": 3
+          "fallbackOutput": 10
         }
       },
       "id": "8d95bb71-b7da-4c18-901f-30e261e2637b",
@@ -928,7 +950,7 @@
             {
               "keyName": "dataset_id",
               "condition": "eq",
-              "keyValue": "={{ $('Set File ID').item.json.file_id }}"
+              "keyValue": "={{ $('Set File ID_!').item.json.file_id }}"
             }
           ]
         }
@@ -967,10 +989,10 @@
         "columns": {
           "mappingMode": "defineBelow",
           "value": {
-            "id": "={{ $('Set File ID').item.json.file_id }}",
-            "title": "={{ $('Set File ID').item.json.file_title }}",
-            "url": "={{ $('Set File ID').item.json.file_url }}",
-            "schema": "={{ $('Set File ID').item.json.id }}"
+            "id": "={{ $('Set File ID_!').item.json.file_id }}",
+            "title": "={{ $('Set File ID_!').item.json.file_title }}",
+            "url": "={{ $('Set File ID_!').item.json.file_url }}",
+            "schema": "={{ $('Set File ID_!').item.json.id }}"
           },
           "matchingColumns": [
             "id"
@@ -1062,7 +1084,7 @@
         "columns": {
           "mappingMode": "defineBelow",
           "value": {
-            "dataset_id": "={{ $('Set File ID').item.json.file_id }}",
+            "dataset_id": "={{ $('Set File ID_!').item.json.file_id }}",
             "row_data": "={{ $json.toJsonString().replaceAll(/'/g, \"''\") }}"
           },
           "matchingColumns": [
@@ -1135,7 +1157,7 @@
         "columns": {
           "mappingMode": "defineBelow",
           "value": {
-            "id": "={{ $('Set File ID').item.json.file_id }}",
+            "id": "={{ $('Set File ID_!').item.json.file_id }}",
             "schema": "={{ $json.schema }}"
           },
           "matchingColumns": [
@@ -1273,7 +1295,7 @@
         "operation": "deleteFile",
         "fileId": {
           "__rl": true,
-          "value": "={{ $('Set File ID').item.json.file_id }}",
+          "value": "={{ $('Set File ID_!').item.json.file_id }}",
           "mode": "id"
         },
         "options": {}
@@ -1317,7 +1339,7 @@
             {
               "keyName": "id",
               "condition": "eq",
-              "keyValue": "={{ $('Set File ID').item.json.file_id }}"
+              "keyValue": "={{ $('Set File ID_!').item.json.file_id }}"
             }
           ]
         }
@@ -1325,7 +1347,7 @@
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
       "position": [
-        2160,
+        2200,
         1300
       ],
       "id": "c3519de5-1a7c-41dd-81e2-effb6031dd9a",
@@ -1342,7 +1364,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "=https://www.googleapis.com/drive/v3/files/{{ $('Set File ID').item.json.file_id }}/copy",
+        "url": "=https://www.googleapis.com/drive/v3/files/{{ $('Set File ID_!').item.json.file_id }}/copy",
         "authentication": "predefinedCredentialType",
         "nodeCredentialType": "googleDriveOAuth2Api",
         "sendBody": true,
@@ -1387,7 +1409,7 @@
           "conditions": [
             {
               "id": "21651ed3-cfa6-4ef8-940b-fb734b9e4fc5",
-              "leftValue": "={{ $('Set File ID').item.json.file_type }}",
+              "leftValue": "={{ $('Set File ID_!').item.json.file_type }}",
               "rightValue": "video/mp4",
               "operator": {
                 "type": "string",
@@ -1651,9 +1673,187 @@
       ],
       "id": "745824af-8a7a-47e7-b49a-460d8484b649",
       "name": "AggregateGGDRive"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "10646eae-ae46-4327-a4dc-9987c2d76173",
+              "name": "file_id",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            },
+            {
+              "id": "f4536df5-d0b1-4392-bf17-b8137fb31a44",
+              "name": "file_type",
+              "value": "={{ $json.mimeType }}",
+              "type": "string"
+            },
+            {
+              "id": "77d782de-169d-4a46-8a8e-a3831c04d90f",
+              "name": "file_title",
+              "value": "={{ $json.name }}",
+              "type": "string"
+            },
+            {
+              "id": "9bde4d7f-e4f3-4ebd-9338-dce1350f9eab",
+              "name": "file_url",
+              "value": "={{ $json.webViewLink }}",
+              "type": "string"
+            },
+            {
+              "id": "b8735aa6-4e47-4197-9f36-6559fa4d4420",
+              "name": "id",
+              "value": "={{ $json.id }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "063a0f23-fcbe-479c-8a60-269a9db0e695",
+      "name": "Set File ID_!",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        280,
+        600
+      ]
     }
   ],
-  "pinData": {},
+  "pinData": {
+    "File Updated": [
+      {
+        "json": {
+          "parents": [
+            "1es_xg6E6Wuluod7Yo-ZBcs38dPQvZuSV"
+          ],
+          "lastModifyingUser": {
+            "displayName": "nguyenvannhuan90123",
+            "kind": "drive#user",
+            "me": false,
+            "permissionId": "18128598240705422530",
+            "emailAddress": "nguyenvannhuan90123@gmail.com",
+            "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjVY45Q60QgZBXA-IQBy5Q6K5ne6OT7MDIVo5_MiNn79Ehg9Xz05=s64"
+          },
+          "owners": [
+            {
+              "displayName": "nguyenvannhuan90123",
+              "kind": "drive#user",
+              "me": false,
+              "permissionId": "18128598240705422530",
+              "emailAddress": "nguyenvannhuan90123@gmail.com",
+              "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjVY45Q60QgZBXA-IQBy5Q6K5ne6OT7MDIVo5_MiNn79Ehg9Xz05=s64"
+            }
+          ],
+          "permissions": [
+            {
+              "kind": "drive#permission",
+              "id": "18128598240705422530",
+              "type": "user",
+              "emailAddress": "Nguyenvannhuan90123@gmail.com",
+              "role": "owner",
+              "displayName": "Nguyenvannhuan90123",
+              "photoLink": "https://lh3.googleusercontent.com/a-/ALV-UjVY45Q60QgZBXA-IQBy5Q6K5ne6OT7MDIVo5_MiNn79Ehg9Xz05=s64",
+              "deleted": false,
+              "pendingOwner": false
+            },
+            {
+              "kind": "drive#permission",
+              "id": "13996402246869153959",
+              "type": "user",
+              "emailAddress": "anhlaptrinh@maken8n-460707.iam.gserviceaccount.com",
+              "role": "writer",
+              "displayName": "anhlaptrinh@maken8n-460707.iam.gserviceaccount.com",
+              "photoLink": "https://lh3.googleusercontent.com/a/ACg8ocKH5w344kblWlUrkrXXBeHnoBEpGm0zKmuCG1_uU51YYn2Mmok=s64",
+              "deleted": false,
+              "pendingOwner": false
+            }
+          ],
+          "spaces": [
+            "drive"
+          ],
+          "capabilities": {
+            "canAcceptOwnership": false,
+            "canAddChildren": false,
+            "canAddMyDriveParent": false,
+            "canChangeCopyRequiresWriterPermission": false,
+            "canChangeSecurityUpdateEnabled": false,
+            "canChangeViewersCanCopyContent": false,
+            "canComment": true,
+            "canCopy": true,
+            "canDelete": false,
+            "canDisableInheritedPermissions": false,
+            "canDownload": true,
+            "canEdit": true,
+            "canEnableInheritedPermissions": true,
+            "canListChildren": false,
+            "canModifyContent": true,
+            "canModifyContentRestriction": true,
+            "canModifyEditorContentRestriction": true,
+            "canModifyOwnerContentRestriction": false,
+            "canModifyLabels": false,
+            "canMoveChildrenWithinDrive": false,
+            "canMoveItemIntoTeamDrive": false,
+            "canMoveItemOutOfDrive": false,
+            "canMoveItemWithinDrive": true,
+            "canReadLabels": false,
+            "canReadRevisions": true,
+            "canRemoveChildren": false,
+            "canRemoveContentRestriction": false,
+            "canRemoveMyDriveParent": true,
+            "canRename": true,
+            "canShare": true,
+            "canTrash": false,
+            "canUntrash": false
+          },
+          "permissionIds": [
+            "18128598240705422530",
+            "13996402246869153959"
+          ],
+          "linkShareMetadata": {
+            "securityUpdateEligible": false,
+            "securityUpdateEnabled": true
+          },
+          "kind": "drive#file",
+          "id": "1Ys_HA1QtktPECJtGMN6nlbYHOOvGIBkZ",
+          "name": "TAI LIEU MES 6.xls",
+          "mimeType": "application/vnd.ms-excel",
+          "starred": false,
+          "trashed": false,
+          "explicitlyTrashed": false,
+          "version": "3",
+          "webContentLink": "https://drive.google.com/uc?id=1Ys_HA1QtktPECJtGMN6nlbYHOOvGIBkZ&export=download",
+          "webViewLink": "https://docs.google.com/spreadsheets/d/1Ys_HA1QtktPECJtGMN6nlbYHOOvGIBkZ/edit?usp=drivesdk&ouid=116520930053906132384&rtpof=true&sd=true",
+          "iconLink": "https://drive-thirdparty.googleusercontent.com/16/type/application/vnd.ms-excel",
+          "hasThumbnail": true,
+          "thumbnailLink": "https://lh3.googleusercontent.com/drive-storage/AJQWtBNWvYuYLvQsW53qwiIlChb978KbGxPGg2aDn6vXPkOKHMBSlxuaviQhe7civq2PwpkMCDOMZPCg5NFLmc_Zu8yurrE9UtfXTksqr70-P4f3qUI9=s220",
+          "thumbnailVersion": "1",
+          "viewedByMe": false,
+          "createdTime": "2025-06-28T10:40:35.679Z",
+          "modifiedTime": "2025-06-28T10:40:21.000Z",
+          "modifiedByMe": false,
+          "shared": true,
+          "ownedByMe": false,
+          "viewersCanCopyContent": true,
+          "copyRequiresWriterPermission": false,
+          "writersCanShare": true,
+          "originalFilename": "TAI LIEU MES 6.xls",
+          "fullFileExtension": "xls",
+          "fileExtension": "xls",
+          "md5Checksum": "9972fbb988e4d426c013013bfc2cc8bd",
+          "sha1Checksum": "c2fafd5f975e5f00cc530e1241c7cc2d688968c6",
+          "sha256Checksum": "d4f6abd39c175cfb977c3aa77fc24a029fd82ccd21fd9b06efeba4f66892c9f9",
+          "size": "488960",
+          "quotaBytesUsed": "488960",
+          "headRevisionId": "0B_x0_dYKTbDFRi96TWplaktJMnRBQnNXYkdEZXpTenNtR3Q0PQ",
+          "isAppAuthorized": false,
+          "inheritedPermissionsDisabled": false
+        }
+      }
+    ]
+  },
   "connections": {
     "OpenAI Chat Model": {
       "ai_languageModel": [
@@ -1726,17 +1926,6 @@
         [
           {
             "node": "Delete Old Data Rows",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set File ID": {
-      "main": [
-        [
-          {
-            "node": "Delete Old Doc Rows",
             "type": "main",
             "index": 0
           }
@@ -1865,12 +2054,32 @@
         ],
         [
           {
+            "node": "Extract from Excel",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Extract from Excel",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Extract from Excel",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
             "node": "Extract from CSV",
             "type": "main",
             "index": 0
           }
         ],
-        [],
         [
           {
             "node": "Extract Document Text1",
@@ -1898,7 +2107,8 @@
             "type": "main",
             "index": 0
           }
-        ]
+        ],
+        []
       ]
     },
     "Extract from Excel": {
@@ -1993,7 +2203,7 @@
         [],
         [
           {
-            "node": "Set File ID",
+            "node": "Set File ID_!",
             "type": "main",
             "index": 0
           }
@@ -2227,13 +2437,24 @@
           }
         ]
       ]
+    },
+    "Set File ID_!": {
+      "main": [
+        [
+          {
+            "node": "Delete Old Doc Rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": true,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "5be7033b-a13e-4244-b75e-970a4e1de0b4",
+  "versionId": "a3474c01-cdcf-4d36-8897-c777d538b724",
   "meta": {
     "instanceId": "94a383c02457267bcc44878635a0fa02b7d3206c5479bfc8890faa812e2bbd97"
   },
